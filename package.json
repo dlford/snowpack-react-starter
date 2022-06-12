@@ -1,0 +1,60 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "jest",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:css": "stylelint --cache --ignore-path .gitignore \"**/*.{css,scss}\"",
+    "lint:fix": "npm run lint:fix:js && npm run lint:fix:css",
+    "lint:fix:js": "eslint --fix --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix:css": "stylelint --fix --cache --ignore-path .gitignore \"**/*.{css,scss}\"",
+    "format": "prettier --ignore-path .gitignore --ignore-path \"**/*.{json,yaml,yml,css,scss,html,md}\"",
+    "format:fix": "prettier --ignore-path .gitignore --ignore-path --write \"**/*.{json,yaml,yml,css,scss,html,md}\"",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --cache --fix",
+    "*.{css,scss}": "stylelint --cache --fix",
+    "*.{json,yaml,yml,css,scss,html,md}": "prettier --write"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@snowpack/app-scripts-react": "^2.0.1",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.0",
+    "babel-jest": "^28.1.1",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "jest-transform-stub": "^2.0.0",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.2",
+    "snowpack": "^3.3.7",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^4.0.0"
+  }
+}
